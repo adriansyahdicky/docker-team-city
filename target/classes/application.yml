@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: docker-team-city
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://ksprtj-haproxy:3306/ksprtj2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Jakarta
+    username: ksprtj
+    password: JieDYDuI339
+    hikari:
+      connection-timeout: 10000
+      maximum-pool-size: 10
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  jpa:
+    show-sql: true
+#  cloud:
+#    kubernetes:
+#      secrets:
+#        enableApi: true
+
+server:
+  port: 8181

@@ -1,17 +1,8 @@
-# Start with a base image containing Java runtime
 FROM openjdk:8-jdk-alpine
-
-# Add a volume pointing to /tmp
-VOLUME /tmp
-
-# Make port 8080 available to the world outside this container
+ENV APP_FILE docker-team-city-0.0.1-SNAPSHOT.jar
+ENV APP_HOME /usr/apps
 EXPOSE 8181
-
-# The application's jar file
-ARG JAR_FILE= docker-team-city-0.0.1-SNAPSHOT.jar
-
-# Add the application's jar to the container
-ADD ${JAR_FILE} docker-team-city.jar
-
-# Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/docker-team-city.jar"]
+COPY target/$APP_FILE $APP_HOME/
+WORKDIR $APP_HOME
+ENTRYPOINT ["sh", "-c"]
+CMD ["exec java -jar $APP_FILE"]
