@@ -27,6 +27,7 @@ public class MemberController {
     public ResponseEntity<?> getMemberPage(Pageable pageable){
         try{
             Page<Member> getDataMember = memberService.getMemberPage(pageable);
+            LOGGER.info("list member : "+getDataMember.getContent());
             return ResponseEntity.ok(getDataMember);
         }catch (Exception ex){
             LOGGER.error("error controller getMemberPage : "+ex.getMessage());
