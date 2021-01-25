@@ -1,6 +1,0 @@
-co\id\teamcity\controller\MemberController.class
-co\id\teamcity\repository\MemberRepository.class
-co\id\teamcity\service\impl\MemberServiceImpl.class
-co\id\teamcity\DockerTeamCityApplication.class
-co\id\teamcity\entity\Member.class
-co\id\teamcity\service\MemberService.class
