@@ -39,7 +39,7 @@ public class MemberController {
     public ResponseEntity<?> getMemberById(@PathVariable("id") Integer id){
         try{
             Member getMemberById = memberService.getMemberById(id);
-            LOGGER.info("data member : "+getMemberById);
+            LOGGER.info("data member by id : "+getMemberById);
             return ResponseEntity.ok(getMemberById);
         }catch (Exception ex){
             LOGGER.error("error controller getMemberById : "+ex.getMessage());
